@@ -65,8 +65,10 @@ header .titre i {
   font-size: 2rem;
 }
 header .nav {
+  margin: 0 auto;
   width: 85%;
   max-width: 1300px;
+  background-color: rgb(255, 255, 255);
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -141,8 +143,10 @@ header .titre i {
   font-size: 2rem;
 }
 header .nav {
+  margin: 0 auto;
   width: 85%;
   max-width: 1300px;
+  background-color: rgb(255, 255, 255);
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -184,10 +188,11 @@ header .ul2 a {
 
 .section1 {
   background-color: rgb(255, 255, 255);
+  margin: 0 auto;
   width: 85%;
   max-width: 1300px;
-  margin: 0 auto;
-  height: 1200px;
+  background-color: rgb(255, 255, 255);
+  height: 1100px;
   padding: 50px 8%;
 }
 .section1 h5 {
@@ -219,7 +224,7 @@ header .ul2 a {
   width: 50%;
 }
 .section1 .titre2 h2 {
-  font-size: 3.2rem;
+  font-size: 2.6rem;
   text-transform: uppercase;
   margin-bottom: 20px;
 }
@@ -230,4 +235,24 @@ header .ul2 a {
 .section1 .img1 {
   background: url(../images/pic01.jpg) center/cover;
   height: 500PX;
+}
+.section1 button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 50px auto;
+}
+
+.section2 {
+  margin: 0 auto;
+  width: 85%;
+  max-width: 1300px;
+  background-color: rgb(255, 255, 255);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  border: 2px solid rgba(63, 61, 61, 0.283);
 }/*# sourceMappingURL=index.css.map */
