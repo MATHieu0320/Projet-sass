@@ -12,29 +12,61 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "font1", sans-serif;
   background: url(../images/bg.jpg) fixed center/cover;
 }
+body:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgb(36, 36, 36);
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  animation: sombre 1.5s forwards;
+}
+@keyframes sombre {
+  to {
+    opacity: 0;
+  }
+}
 body li {
   list-style: none;
 }
-body a {
+body a, body a:visited {
   text-decoration: none;
+  z-index: 2;
 }
 body .btn {
   border: 2px solid black;
-  padding: 10px 35px;
+  height: 45px;
+  width: 170px;
   font-weight: 750;
   background-color: transparent;
   text-transform: uppercase;
-  color: rgb(35, 35, 35);
+  letter-spacing: 2px;
+  transition: 0.2s;
+}
+body .btn:hover {
+  transform: scale(1.1);
+  text-decoration: none;
+}
+body .btn a {
+  color: rgb(36, 36, 36);
 }
 
 header {
+  text-align: center;
   height: 100vh;
   color: rgb(255, 255, 255);
   font-family: light, serif, sans-serif;
+  position: relative;
 }
 header .titre {
   display: flex;
@@ -42,7 +74,6 @@ header .titre {
   justify-content: center;
   flex-direction: column;
   height: 100%;
-  position: relative;
   animation: d 1.5s ease-in-out;
 }
 @keyframes d {
@@ -56,72 +87,100 @@ header .titre {
 header h1 {
   letter-spacing: 2px;
   text-transform: uppercase;
+  letter-spacing: 6PX;
   font-size: clamp(64px, 5.8vw, 115px);
-  text-align: center;
-  line-height: 120px;
   padding: 0 50PX;
 }
 @media screen and (max-width: 666px) {
   header h1 {
     font-size: 2.5rem;
-    line-height: 70px;
   }
 }
 header p {
   padding: 0 50PX;
   font-size: 1.5rem;
-  text-align: center;
+  font-style: italic;
   margin: 40px 0 60px 0;
   font-family: light, serif;
 }
 header .titre i {
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   border: 2px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
   border-radius: 50px;
   height: 80px;
   width: 80px;
   font-size: 2rem;
 }
 header .nav {
-  margin: 0 auto;
-  width: 85%;
   max-width: 1300px;
-  background-color: rgb(255, 255, 255);
+  width: 85%;
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   background-color: rgba(235, 232, 226, 0.164);
+  display: grid;
+  grid-template-columns: 70% 30%;
+  align-items: center;
+}
+@media screen and (max-width: 846px) {
+  header .nav {
+    grid-template-columns: 100%;
+  }
+}
+header ul {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  height: 65PX;
 }
 header .ul1 {
-  text-transform: uppercase;
-  width: 40%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 0.8rem;
-  min-width: 500px;
+  height: 65PX;
   letter-spacing: 2px;
   text-transform: uppercase;
+}
+header .ul1:hover li:not(:hover) {
+  background-color: transparent;
+  color: rgb(255, 255, 255);
 }
 @media screen and (max-width: 846px) {
   header .ul1 {
     width: 100%;
-    justify-content: space-around;
-    min-width: 0px;
     font-size: 0.6rem;
-    margin-left: 0px;
+    min-width: 0;
+    height: 65px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }
+header .ul1 li {
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0 15px;
+  font-size: 0.7rem;
+  height: 100%;
+}
+header .ul1 li:first-child {
+  background-color: rgb(255, 255, 255);
+  color: rgb(36, 36, 36);
+}
+header .ul1 li:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(36, 36, 36);
+}
+header .ul1 a {
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
 header .ul2 {
-  width: 21%;
+  width: 100%;
   text-transform: uppercase;
   display: flex;
   align-items: center;
@@ -140,9 +199,11 @@ header .ul2 a {
 }
 
 header {
+  text-align: center;
   height: 100vh;
   color: rgb(255, 255, 255);
   font-family: light, serif, sans-serif;
+  position: relative;
 }
 header .titre {
   display: flex;
@@ -150,7 +211,6 @@ header .titre {
   justify-content: center;
   flex-direction: column;
   height: 100%;
-  position: relative;
   animation: d 1.5s ease-in-out;
 }
 @keyframes d {
@@ -164,72 +224,100 @@ header .titre {
 header h1 {
   letter-spacing: 2px;
   text-transform: uppercase;
+  letter-spacing: 6PX;
   font-size: clamp(64px, 5.8vw, 115px);
-  text-align: center;
-  line-height: 120px;
   padding: 0 50PX;
 }
 @media screen and (max-width: 666px) {
   header h1 {
     font-size: 2.5rem;
-    line-height: 70px;
   }
 }
 header p {
   padding: 0 50PX;
   font-size: 1.5rem;
-  text-align: center;
+  font-style: italic;
   margin: 40px 0 60px 0;
   font-family: light, serif;
 }
 header .titre i {
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   border: 2px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
   border-radius: 50px;
   height: 80px;
   width: 80px;
   font-size: 2rem;
 }
 header .nav {
-  margin: 0 auto;
-  width: 85%;
   max-width: 1300px;
-  background-color: rgb(255, 255, 255);
+  width: 85%;
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   background-color: rgba(235, 232, 226, 0.164);
+  display: grid;
+  grid-template-columns: 70% 30%;
+  align-items: center;
+}
+@media screen and (max-width: 846px) {
+  header .nav {
+    grid-template-columns: 100%;
+  }
+}
+header ul {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  height: 65PX;
 }
 header .ul1 {
-  text-transform: uppercase;
-  width: 40%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 0.8rem;
-  min-width: 500px;
+  height: 65PX;
   letter-spacing: 2px;
   text-transform: uppercase;
+}
+header .ul1:hover li:not(:hover) {
+  background-color: transparent;
+  color: rgb(255, 255, 255);
 }
 @media screen and (max-width: 846px) {
   header .ul1 {
     width: 100%;
-    justify-content: space-around;
-    min-width: 0px;
     font-size: 0.6rem;
-    margin-left: 0px;
+    min-width: 0;
+    height: 65px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }
+header .ul1 li {
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0 15px;
+  font-size: 0.7rem;
+  height: 100%;
+}
+header .ul1 li:first-child {
+  background-color: rgb(255, 255, 255);
+  color: rgb(36, 36, 36);
+}
+header .ul1 li:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(36, 36, 36);
+}
+header .ul1 a {
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
 header .ul2 {
-  width: 21%;
+  width: 100%;
   text-transform: uppercase;
   display: flex;
   align-items: center;
@@ -395,7 +483,12 @@ footer {
   footer {
     display: block;
     padding: 0 50px;
-    height: 900px;
+    height: 950px;
+  }
+}
+@media screen and (max-width: 600px) {
+  footer {
+    padding: 0;
   }
 }
 
@@ -411,11 +504,16 @@ footer {
     padding: 30px 30px;
   }
 }
+@media screen and (max-width: 800px) {
+  .formulaire {
+    box-shadow: none;
+  }
+}
 
 label {
   display: flex;
   margin-bottom: 20px;
-  color: rgb(35, 35, 35);
+  color: rgb(36, 36, 36);
   text-transform: uppercase;
 }
 
@@ -471,11 +569,12 @@ input[type=submit] {
 }
 @media screen and (max-width: 800px) {
   .information-personnel .infos {
-    padding: 20px 0;
+    padding: 31px 0;
+    border-top: 1px solid rgba(129, 92, 92, 0.2392156863);
   }
 }
 .information-personnel h5 {
-  color: rgb(35, 35, 35);
+  color: rgb(36, 36, 36);
   font-size: 1.2rem;
   text-align: center;
 }
